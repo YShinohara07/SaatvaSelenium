@@ -25,11 +25,13 @@ for link in urls:
         # attempt1 = driver.find_element_by_xpath('//select[@class="dropdown__select"]').click()
         # Prompt from attempt above gave us a suggested xpath so we will use that
         driver.find_element_by_xpath('//div[@class="u-fullWidth u-flexDisplay u-flexJustify--spaceBetween"]').click()
-        details = driver.find_element_by_xpath('//ul[@class="dropdown__list is-open"]')
 
         # Highlight all details in the box
-        attempt1 = driver.find_elements_by_xpath('//div[@class="u-fullWidth u-flexDisplay u-flexJustify--spaceBetween"]')
+        # attempt1 = driver.find_elements_by_xpath('//div[@class="u-fullWidth u-flexDisplay u-flexJustify--spaceBetween"]')
         price = {}
+        
+        details = driver.find_element_by_xpath('//ul[@class="dropdown__list is-open"]')
+        print(details.text)
         
         clean_details = details.text.split('\n')
         line = 1
