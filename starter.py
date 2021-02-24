@@ -6,13 +6,21 @@ import csv
 # Opens a new CHROME brower
 # Windows users need to specify the path to chrome driver you just downloaded.
 # driver = webdriver.Chrome(r'path\to\the\chromedriver.exe')
-driver = webdriver.Chrome()
+
+# New: If you are having errors about pandas, you need to install numpy and then pandas
+import pandas as pd
+import datetime
+now = datetime.date.today()
+company = 'Saatva'
+header = ['Date','Company','Product','Size','Comparable_Saatva_Product','Original_Price','Discounted_Price','Discount_rate','Discount_value']
+file_name = company+ '_' + str(now) + '.csv'
+
 
 urls = ["https://www.saatva.com/mattresses/saatva-classic"]
+# csv_file = open(file_name, 'w', encoding='utf-8', newline='')
+# writer = csv.writer(csv_file)
 
-csv_file = open('saatva.csv', 'w', encoding='utf-8', newline='')
-writer = csv.writer(csv_file)
-
+driver = webdriver.Chrome()
 for link in urls:
     try:
         # Go to the page that we want to scrape, refresh to remove pop up
@@ -36,15 +44,20 @@ for link in urls:
         clean_details = details.text.split('\n')
         line = 1
         while line <= len(clean_details):
+            price['date'] = now
             price['brand'] = clean_details[line-1]
             price['details'] = clean_details[line]
-            writer.writerow(price.values())
+            # writer.writerow(price.values())
             line+=2
 
-        
     except Exception as e:
         print(e)
         break
 
 driver.close()
-csv_file.close()
+
+df = pd.DataFrame(data=price, index=[0])
+print(price)
+print(df)
+df.to_csv(file_name,index=False)
+# csv_file.close()
