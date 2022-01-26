@@ -1,0 +1,21 @@
+Using S3 buckets
+
+Prerequisites: S3 storage bucket creditionals
+
+Install the lastest verision (v2) AWS Command Line Interface (CLI) on your machine
+https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
+
+Add AWS profile via aws command line (terminal/command prompt):
+Execute "aws configure", you will see "AWS Access Key ID [None]:". Copy and paste the key creditionals from the document provided
+Do the same for "AWS Secret Access Key [None]:"
+For "Default region name [None]:" enter "us-east-2" (no quotes)
+Leave "Default output format [None]:" as a blank entry
+
+
+Interacting with S3 buckets on Python
+Install boto3 library by going to your terminal/command prompt with: pip install boto3
+
+Example script using S3 see set_up2_25.py
+
+
+

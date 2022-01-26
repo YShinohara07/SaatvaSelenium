@@ -1,0 +1,9 @@
+date,company,product,size,original_price,discounted_price
+2021-02-25,Saatva,saatva-classic,Twin,799.0,
+2021-02-25,Saatva,saatva-classic,Twin XL,999.0,
+2021-02-25,Saatva,saatva-classic,Full,1299.0,1099.0
+2021-02-25,Saatva,saatva-classic,Queen,1399.0,1199.0
+2021-02-25,Saatva,saatva-classic,King,1799.0,1599.0
+2021-02-25,Saatva,saatva-classic,Split King,1998.0,1798.0
+2021-02-25,Saatva,saatva-classic,Cal King,1799.0,1599.0
+2021-02-25,Saatva,saatva-classic,Split Cal King,1999.0,1799.0
